@@ -1,5 +1,4 @@
-# 📈 TWSE Institutional Investor Tracking Tool
-# 📈 台灣證券交易所三大法人籌碼追蹤工具
+# 📈 台灣證券交易所三大法人籌碼追蹤工具 TWSE Institutional Investor Tracking Tool
 
 [中文說明](#-中文說明) | [English Description](#-english-description)
 
