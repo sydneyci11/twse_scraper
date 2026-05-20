@@ -46,16 +46,17 @@ def process_data(all_data_list):
     combined_df = pd.concat(all_dfs)
     summary_df = combined_df.groupby(['證券代號', '證券名稱']).sum().reset_index()
     
-    # 再次四捨五入，消除浮點運算誤差
-    summary_df['外資買賣超(張)'] = summary_df['外資買賣超(張)'].round(2)
-    summary_df['三大法人買賣超(張)'] = summary_df['三大法人買賣超(張)'].round(2)
+    # 強制再次四捨五入，並重新命名為「累計」
+    summary_df['累計外資(張)'] = summary_df['外資買賣超(張)'].round(2)
+    summary_df['累計三大法人(張)'] = summary_df['三大法人買賣超(張)'].round(2)
     
     # 計算日均
     days_count = len(all_data_list)
-    summary_df['外資日均(張)'] = (summary_df['外資買賣超(張)'] / days_count).round(2)
-    summary_df['三大法人日均(張)'] = (summary_df['三大法人買賣超(張)'] / days_count).round(2)
+    summary_df['外資日均(張)'] = (summary_df['累計外資(張)'] / days_count).round(2)
+    summary_df['三大法人日均(張)'] = (summary_df['累計三大法人(張)'] / days_count).round(2)
     
-    return summary_df
+    # 移除舊的欄位，保持乾淨
+    return summary_df[['證券代號', '證券名稱', '累計外資(張)', '累計三大法人(張)', '外資日均(張)', '三大法人日均(張)']]
 
 # --- Streamlit UI 介面 ---
 st.title("📈 TWSE 三大法人籌碼追蹤工具")
@@ -103,21 +104,23 @@ if st.sidebar.button("🚀 開始獲取最新資料"):
         
         with col1:
             st.subheader("🔥 三大法人累計買超前 10 名")
-            top_buy = final_df.sort_values(by='三大法人買賣超(張)', ascending=False).head(10)
-            fig_buy = px.bar(top_buy, x='證券名稱', y='三大法人買賣超(張)', color='三大法人買賣超(張)', 
-                             color_continuous_scale='Reds', text_auto=True)
+            top_buy = final_df.sort_values(by='累計三大法人(張)', ascending=False).head(10)
+            fig_buy = px.bar(top_buy, x='證券名稱', y='累計三大法人(張)', color='累計三大法人(張)', 
+                             color_continuous_scale='Reds', text_auto=True,
+                             labels={'累計三大法人(張)': '累計買超(張)'})
             st.plotly_chart(fig_buy, use_container_width=True)
             
         with col2:
             st.subheader("❄️ 三大法人累計賣超前 10 名")
-            top_sell = final_df.sort_values(by='三大法人買賣超(張)', ascending=True).head(10)
-            fig_sell = px.bar(top_sell, x='證券名稱', y='三大法人買賣超(張)', color='三大法人買賣超(張)', 
-                              color_continuous_scale='Blues_r', text_auto=True)
+            top_sell = final_df.sort_values(by='累計三大法人(張)', ascending=True).head(10)
+            fig_sell = px.bar(top_sell, x='證券名稱', y='累計三大法人(張)', color='累計三大法人(張)', 
+                              color_continuous_scale='Blues_r', text_auto=True,
+                              labels={'累計三大法人(張)': '累計賣超(張)'})
             st.plotly_chart(fig_sell, use_container_width=True)
             
         # 完整表格呈現
         st.subheader(f"📋 近 {target_days} 日完整統計表 (Top 50 買超)")
-        full_buy_50 = final_df.sort_values(by='三大法人買賣超(張)', ascending=False).head(50)
+        full_buy_50 = final_df.sort_values(by='累計三大法人(張)', ascending=False).head(50)
         st.dataframe(full_buy_50, use_container_width=True)
         
         # 下載按鈕
