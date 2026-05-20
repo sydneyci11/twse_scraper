@@ -32,7 +32,8 @@
 - **網頁框架**：Streamlit
 - **數據處理**：Pandas
 - **圖表套件**：Plotly
-- **資料來源**：[臺灣證券交易所 (TWSE) 官方開放 API](https://openapi.twse.com.tw/)
+- **資料來源**：[臺灣證券交易所 (TWSE) 官方 Web JSON API (T86 端點)](https://www.twse.com.tw/zh/trading/foreign/t86.html)
+- **可參考**：[臺灣證券交易所 (TWSE) 官方開放 API](https://openapi.twse.com.tw/)
 
 ### 本地開發與啟動
 
@@ -86,7 +87,8 @@ A lightweight Taiwan stock market institutional flow analysis tool built with Py
 - **Framework**: Streamlit
 - **Data Processing**: Pandas
 - **Visualization**: Plotly
-- **Data Source**: [Taiwan Stock Exchange (TWSE) Official Open API](https://openapi.twse.com.tw/)
+- **Data Source**: [Taiwan Stock Exchange (TWSE) Official Web JSON API (T86 Endpoint)](https://www.twse.com.tw/zh/trading/foreign/t86.html)
+- **Reference**: [Taiwan Stock Exchange (TWSE) Official Open API](https://openapi.twse.com.tw/)
 
 ### Local Development
 
