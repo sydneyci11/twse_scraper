@@ -13,7 +13,7 @@
 
 ### 線上體驗
 
-👉 **[https://sydneyci-twse-scraper.streamlit.app](https://sydneyci-twse-scraper.streamlit.app)**
+👉 **[https://sydneyci-twse-scraper.streamlit.app/](https://sydneyci-twse-scraper.streamlit.app/)**
 
 ### 核心功能
 
@@ -38,8 +38,8 @@
 
 1. **Clone 專案**
    ```bash
-   git clone https://github.com/your-username/twse-scraper.git
-   cd twse-scraper
+   git clone https://github.com/sydneyci11/twse_scraper.git
+   cd twse_scraper
    ```
 
 2. **建立虛擬環境並安裝套件**
@@ -67,7 +67,7 @@ A lightweight Taiwan stock market institutional flow analysis tool built with Py
 
 ### Live Demo
 
-👉 **[https://sydneyci-twse-scraper.streamlit.app](https://sydneyci-twse-scraper.streamlit.app)**
+👉 **[https://sydneyci-twse-scraper.streamlit.app/](https://sydneyci-twse-scraper.streamlit.app/)**
 
 ### Key Features
 
@@ -92,8 +92,8 @@ A lightweight Taiwan stock market institutional flow analysis tool built with Py
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/twse-scraper.git
-   cd twse-scraper
+   git clone https://github.com/sydneyci11/twse_scraper.git
+   cd twse_scraper
    ```
 
 2. **Create a virtual environment and install dependencies**
