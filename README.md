@@ -1,6 +1,9 @@
 # 📈 台灣證券交易所三大法人籌碼追蹤工具 (TWSE Tracker)
 
-[中文說明](#-中文說明) | [English Description](#-english-description)
+<p align="left">
+  <a href="#中文說明">中文說明</a> | 
+  <a href="#english-description">English Description</a>
+</p>
 
 ---
 
@@ -10,7 +13,7 @@
 
 ### 線上體驗
 
-👉 **[https://sydneyci-twse-scraper.streamlit.app/](https://sydneyci-twse-scraper.streamlit.app/)**
+👉 **[https://sydneyci-twse-scraper.streamlit.app](https://sydneyci-twse-scraper.streamlit.app)**
 
 ### 核心功能
 
@@ -64,7 +67,7 @@ A lightweight Taiwan stock market institutional flow analysis tool built with Py
 
 ### Live Demo
 
-👉 **[https://sydneyci-twse-scraper.streamlit.app/](https://sydneyci-twse-scraper.streamlit.app/)**
+👉 **[https://sydneyci-twse-scraper.streamlit.app](https://sydneyci-twse-scraper.streamlit.app)**
 
 ### Key Features
 
